@@ -6,8 +6,8 @@
 
 A pleasant three-pane workspace — **chat · file tree · git** — that idles around **~120 MB**
 instead of a full editor's 400 MB+. Plan-mode approvals, slash-command **and `@`-file** autocomplete,
-a file tree that lights up with your git changes, inline screenshot paste, live usage bars, and a
-tray icon that doubles as a glanceable usage meter.
+a file tree that lights up with your git changes, inline screenshot paste, **Remote Control from your
+phone**, live usage bars, and a tray icon that doubles as a glanceable usage meter.
 
 [![Download](https://img.shields.io/github/v/release/Concept211/ClaudeView?label=download&style=for-the-badge&color=C75F3F)](https://github.com/Concept211/ClaudeView/releases/latest)
 &nbsp;
@@ -29,14 +29,15 @@ the git state, approve plans, and keep an eye on your usage — without the weig
 
 ## Features
 
-- **💬 Chat with Claude Code** — streamed Markdown, tool calls, tool results, and live to-do checklists.
+- **💬 Chat with Claude Code** — streamed Markdown, tool calls, tool results, and live to-do checklists. **File paths Claude mentions are clickable** — click a generated `.html` and it opens in your browser.
+- **🛰️ Remote Control** — hand a session off to your phone or claude.ai: flip it on and ClaudeView opens the session link and keeps the transcript **in sync both ways**, so messages you type on your phone show up here (and vice-versa). One session at a time, marked with a violet indicator; it disconnects the moment you close the window.
 - **📋 Plan mode, clickable** — `AskUserQuestion` renders as selectable option cards; `ExitPlanMode` as an **Approve / Reject** card. Reject → edit → re-present works end to end.
 - **⌨️ Slash commands** — `/` autocomplete over built-ins *and* your own `.claude/commands` and skills, with descriptions pulled from their frontmatter. No-arg builtins submit on select.
 - **🔎 `@`-mention files** — type `@` for an inline, filter-as-you-type file picker (Zed-style). Arrow-keys / Tab to insert a path reference into your message. Or right-click any file → **Reference in chat**.
 - **🗂️ File tree as a change-radar** — lazy-loaded and **tinted live by git status** (green = new · yellow = modified · red = deleted), with a dot on folders that contain changes. **Single-click a changed file to see its diff**; right-click for Reference in chat · View diff · Open · Reveal in Explorer · Open terminal here · Copy path.
 - **🖼️ Inline screenshot paste** — paste an image straight into the composer (Zed-style); hover a thumbnail to enlarge.
-- **🔀 Git panel** — status, colored changes, history, and one-box commit (Enter to commit); auto-refreshes after each turn. Not a repo yet? **Initialize one in a click.**
-- **🔭 Sessions** — multiple concurrent conversations per project, with a working/awaiting/idle indicator and per-session cost.
+- **🔀 Git panel** — status, colored changes, history, and one-box commit (Enter to commit); auto-refreshes after each turn. **Click a changed file to reveal it in the tree and open its diff** — a tinted, side-bar diff view with colored `+`/`−` lines. Not a repo yet? **Initialize one in a click.**
+- **🔭 Sessions** — multiple concurrent conversations per project, with a working/awaiting/idle indicator and per-session cost. **A native toast tells you when a task finishes** while ClaudeView is unfocused, minimized, or closed to the tray.
 - **🎨 Theming** — Light / Dark / **System** (follows Windows), switching the chrome, the transcript, *and* the context menus together; immersive dark title bar.
 - **📊 Usage at a glance** — status-bar 5h / 7d limit bars, session cost, model, and live RAM.
 - **🛎️ Tray meter** — the tray icon *is* a live usage bar chart. Single-click for a usage popup, double-click to restore the window, right-click for a menu (update frequency, close-to-tray, start with Windows).
