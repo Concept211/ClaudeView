@@ -1,6 +1,6 @@
 <div align="center">
 
-# ✳️ ClaudeView
+# <img src="docs/logo.png" width="40" valign="middle" alt="ClaudeView logo"/> ClaudeView
 
 ### A fast, native Windows desktop app for the Claude Code CLI
 
