@@ -5,9 +5,11 @@
 ### A fast, native Windows desktop app for the Claude Code CLI
 
 A pleasant three-pane workspace — **chat · file tree · git** — that idles around **~120 MB**
-instead of a full editor's 400 MB+. Plan-mode approvals, slash-command **and `@`-file** autocomplete,
-a file tree that lights up with your git changes, inline screenshot paste, **Remote Control from your
-phone**, live usage bars, and a tray icon that doubles as a glanceable usage meter.
+instead of a full editor's 400 MB+. A built-in **Assistant workspace** for general chats, a
+**click-to-open context & plan-usage panel**, plan-mode approvals, slash-command **and `@`-file**
+autocomplete, a file tree that lights up with your git changes, inline screenshot paste, **Remote
+Control from your phone**, distinct **task-done / needs-you alert sounds**, live usage bars, and a
+tray icon that doubles as a glanceable usage meter.
 
 [![Download](https://img.shields.io/github/v/release/Concept211/ClaudeView?label=download&style=for-the-badge&color=C75F3F)](https://github.com/Concept211/ClaudeView/releases/latest)
 &nbsp;
@@ -29,9 +31,11 @@ the git state, approve plans, and keep an eye on your usage — without the weig
 
 ## Features
 
-- **💬 Chat with Claude Code** — streamed Markdown, tool calls, tool results, and live to-do checklists. **File paths Claude mentions are clickable** — click a generated `.html` and it opens in your browser; URLs open in your default browser too. Every code block gets a hover **Copy** button, and every response gets a small **copy / jump-to-prompt** action row, Claude.ai-style.
+- **💬 Chat with Claude Code** — streamed Markdown, tool calls, tool results, and live to-do checklists. **File paths Claude mentions are clickable**, and **local `.html` files it makes for you open in your browser automatically** when it links them by path; URLs open in your default browser too. Every code block gets a hover **Copy** button, and every response gets a small **copy / jump-to-prompt** action row, Claude.ai-style.
+- **✨ Built-in Assistant workspace** — a pinned, always-there general-purpose space (under `Documents\ClaudeView`) for quick questions and one-off tasks that aren't a project. It's non-git, defaults to Bypass, and still has **full filesystem access** — point it at any folder on your machine. Its own blue styling keeps it distinct from your projects, and it sits at the top of both the project picker and the sessions list.
 - **🔀 Permission modes, one Shift+Tab away** — cycle **Auto · Default · Accept Edits · Plan Mode · Don't Ask · Bypass Permissions** (the same set as Zed), or click the pill for a one-click picker instead of cycling. New sessions start in **Bypass Permissions**.
 - **🧠 Model picker that tracks your CLI** — the model dropdown lists exactly what your installed Claude Code offers — Opus, **Sonnet 5**, Fable, Haiku, and Default — with display names and per-model reasoning-**effort** levels pulled straight from the CLI, so a new model shows up the moment you update the CLI, no app update needed. Opus, Sonnet, and Fable run with the **1M-token context window**, and the composer ring shows how much of it you've used — visible at a glance whether or not a turn is running.
+- **📊 Context & usage panel** — click the context ring for the **real `/context` breakdown**: per-category token usage (system prompt · tools · skills · MCP · memory files · messages · free space), plus your **plan-usage bars** (5-hour · weekly) and a one-click **Compact conversation** that updates the numbers live as it runs. It reads the live session **token-free** (no wasted message) and even wakes an idle session to show its baseline.
 - **📥 Never blocked on send** — type your next message while Claude is still working and it queues as an editable, numbered chip instead of waiting; it fires the moment the turn ends. Press **Enter** again to force it out immediately instead of waiting, or pull it back into the composer to revise it first.
 - **🔴🟢 Inline diffs** — Edit/Write/MultiEdit tool calls show a real red/green line diff right inside the tool card, not just a filename.
 - **⏱️ Never wonder if it's stuck** — the working indicator shows elapsed time and *what* Claude's currently running (e.g. "Editing Foo.cs · 12s"), not just three dots.
@@ -40,14 +44,14 @@ the git state, approve plans, and keep an eye on your usage — without the weig
 - **⌨️ Slash commands** — `/` autocomplete over built-ins *and* your own `.claude/commands` and skills — icon-coded so you can tell Anthropic built-ins from your own at a glance — with descriptions **and argument hints** pulled from their frontmatter. No-arg builtins submit on select; fires mid-message too, not just at the start.
 - **🔎 `@`-mention files** — type `@` for an inline, filter-as-you-type file picker (Zed-style). Arrow-keys / Tab to insert a path reference into your message. Or right-click any file → **Reference in chat**.
 - **📎 Attach & drop** — attach a file with the paperclip button or drag it straight onto the composer; images become inline thumbnails, everything else becomes a reference Claude can read.
-- **🗂️ File tree as a change-radar** — lazy-loaded and **tinted live by git status** (green = new · yellow = modified · red = deleted), with a dot on folders that contain changes. **Single-click a changed file to see its diff**; right-click for Reference in chat · View diff · Open · Reveal in Explorer · Open terminal here · Copy path · **Add to `.gitignore`**.
+- **🗂️ File tree as a change-radar** — lazy-loaded and **tinted live by git status** (green = new · yellow = modified · red = deleted), with a dot on folders that contain changes. **Single-click a changed file to see its diff**; right-click for Reference in chat · View diff · Open · Reveal in Explorer · Open terminal here · Copy path · **Add to `.gitignore`**. It **refreshes itself the moment Claude creates or deletes a file**, and you can **drag any file straight into the composer** to reference it.
 - **🖼️ Inline screenshot paste** — paste an image straight into the composer (Zed-style); hover a thumbnail to enlarge.
 - **🔀 Git panel** — status, colored changes, history, and one-box commit (Enter to commit); auto-refreshes after each turn. **Click a changed file to reveal it in the tree and open its diff** — a tinted, side-bar diff view with colored `+`/`−` lines. Not a repo yet? **Initialize one in a click.**
-- **🔭 Sessions** — multiple concurrent conversations per project, with a working/awaiting/idle indicator, per-session cost, and how long ago it last ran (hover for the exact time). **Ctrl+1‑9 / Ctrl+Tab** jump straight to a session. **A native toast tells you when a task finishes** while ClaudeView is unfocused, minimized, or closed to the tray.
+- **🔭 Sessions** — multiple concurrent conversations per project, with a working/awaiting/idle indicator, per-session cost, and how long ago it last ran (hover for the exact time). **Ctrl+1‑9 / Ctrl+Tab** jump straight to a session, **`+` on any group starts a new one**, and you can **pin the projects you live in to the top** of the list. **A native toast — with a distinct sound — tells you when a task finishes** (a gentle chime) or **needs your input** (an insistent, looping alert), while ClaudeView is unfocused, minimized, or closed to the tray.
 - **🎨 Theming** — Light / Dark / **System** (follows Windows), switching the chrome, the transcript, *and* the context menus together; immersive dark title bar.
 - **📊 Usage at a glance** — status-bar 5h / 7d limit bars, session cost, model, and live RAM.
 - **🛎️ Tray meter** — the tray icon *is* a live usage bar chart. Single-click for a usage popup, double-click to restore the window, right-click for a menu (update frequency, close-to-tray, start with Windows).
-- **🪟 Polished window** — responsive collapsing layout, restores its size/maximized state, scroll-follows-cursor across panels.
+- **🪟 Polished window** — responsive collapsing layout, restores its size/maximized state, scroll-follows-cursor across panels, and **double-click a panel splitter to snap it back to its default width**.
 - **♻️ Auto-updating** — self-installs to `%LOCALAPPDATA%`, then updates from GitHub Releases (download → **verify SHA-256** → swap on next launch).
 
 <div align="center">
