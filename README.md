@@ -8,9 +8,10 @@ A pleasant three-pane workspace — **chat · file tree · git** — that idles 
 instead of a full editor's 400 MB+. A built-in **Assistant workspace** for general chats, a
 **click-to-open context & plan-usage panel**, a **live To-Do panel** that mirrors Claude's task
 list, plan-mode approvals, slash-command **and `@`-file**
-autocomplete, a file tree that lights up with your git changes, inline screenshot paste, **Remote
-Control from your phone**, distinct **task-done / needs-you alert sounds**, live usage bars, and a
-tray icon that doubles as a glanceable usage meter.
+autocomplete, a file tree that lights up with your git changes, a built-in **syntax-highlighted code
+viewer & editor**, inline screenshot paste, **Remote Control from your phone**, distinct
+**task-done / needs-you alert sounds**, live usage bars, and a tray icon that doubles as a
+glanceable usage meter.
 
 [![Download](https://img.shields.io/github/v/release/Concept211/ClaudeView?label=download&style=for-the-badge&color=C75F3F)](https://github.com/Concept211/ClaudeView/releases/latest)
 &nbsp;
@@ -46,7 +47,8 @@ the git state, approve plans, and keep an eye on your usage — without the weig
 - **⌨️ Slash commands** — `/` autocomplete over built-ins *and* your own `.claude/commands` and skills — icon-coded so you can tell Anthropic built-ins from your own at a glance — with descriptions **and argument hints** pulled from their frontmatter. No-arg builtins submit on select; fires mid-message too, not just at the start.
 - **🔎 `@`-mention files** — type `@` for an inline, filter-as-you-type file picker (Zed-style). Arrow-keys / Tab to insert a path reference into your message. Or right-click any file → **Reference in chat**.
 - **📎 Attach & drop** — attach a file with the paperclip button or drag it straight onto the composer; images become inline thumbnails, everything else becomes a reference Claude can read.
-- **🗂️ File tree as a change-radar** — lazy-loaded and **tinted live by git status** (green = new · yellow = modified · red = deleted), with a dot on folders that contain changes. **Single-click a changed file to see its diff**; right-click for Reference in chat · View diff · Open · Reveal in Explorer · Open terminal here · Copy path · **Add to `.gitignore`**. It **refreshes itself the moment Claude creates or deletes a file**, and you can **drag any file straight into the composer** to reference it.
+- **🗂️ File tree as a change-radar** — lazy-loaded and **tinted live by git status** (green = new · yellow = modified · red = deleted), with a dot on folders that contain changes. **Double-click any file to open it in the built-in code viewer/editor**; right-click for Reference in chat · View diff · View · Open · Reveal in Explorer · Open terminal here · Copy path · **Add to `.gitignore`**. It **refreshes itself the moment Claude creates or deletes a file**, and you can **drag any file straight into the composer** to reference it.
+- **📝 Built-in code viewer & editor** — double-click any file to open it in a themed, **syntax-highlighted** viewer (~40 languages) topped with a **colored brand-logo badge** for the file's language — no more launching an external app just to glance at a file. Click **Edit** to turn it into a full editor powered by **CodeMirror 6**: line-number gutter, undo/redo, **find/replace**, multi-cursor, auto-indent, and bracket matching — save with **Ctrl+S**. It opens **read-only by default** and stays safe alongside a live session: it silently reloads when a file changes on disk while you're just viewing, **warns before overwriting** a file Claude changed, and preserves your original line endings.
 - **🖼️ Inline screenshot paste** — paste an image straight into the composer (Zed-style); hover a thumbnail to enlarge.
 - **🔀 Git panel** — status, colored changes, history, and one-box commit (Enter to commit); auto-refreshes after each turn. **Click a changed file to reveal it in the tree and open its diff** — a tinted, side-bar diff view with colored `+`/`−` lines. Not a repo yet? **Initialize one in a click.**
 - **🔭 Sessions** — multiple concurrent conversations per project, with a working/awaiting/idle indicator, per-session cost, and how long ago it last ran (hover for the exact time). **Ctrl+1‑9 / Ctrl+Tab** jump straight to a session, **`+` on any group starts a new one**, **↻ starts a project fresh** (clears all its sessions and opens a clean one in a click), and you can **pin the projects you live in to the top** of the list. **A native toast — with a distinct sound — tells you when a task finishes** (a gentle chime) or **needs your input** (an insistent, looping alert), while ClaudeView is unfocused, minimized, or closed to the tray.
