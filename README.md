@@ -57,6 +57,7 @@ the git state, approve plans, and keep an eye on your usage — without the weig
 - **📊 Usage at a glance** — status-bar 5h / 7d limit bars, session cost, model, and live RAM.
 - **🛎️ Tray meter** — the tray icon *is* a live usage bar chart: 5-hour, weekly, and a **configurable third bar** you pick from **Disk · RAM · CPU · App RAM** right from the menu — and its **hover tooltip carries the same three rows** (with **App RAM** showing the exact MB ClaudeView is using). Single-click for a **usage popup** (now with a live **CPU** row and your core count), double-click to restore the window, right-click for a menu (third-bar metric, update frequency, close-to-tray, start with Windows).
 - **🪟 Polished window** — a **responsive collapsing layout** that folds the side panels away as it narrows (down to a phone-width single column), with its **own chat font size for the compact view** kept separate from your desktop size. It restores its size/maximized state, scroll-follows-cursor across panels, and **double-click any panel splitter to reset it**. Panel widths *and* the Explorer/Git and Sessions/To-Do splits are **remembered across sessions and restarts**.
+- **🛡️ Subscription-safe — never bills your API account** — ClaudeView runs on your Claude **subscription**, full stop. Even if your machine has an `ANTHROPIC_API_KEY` (or a Bedrock/Vertex/base-URL override) set for other tools, ClaudeView **strips it from every process it launches** so the CLI can *only* use your subscription — it can never silently drain pay-per-token API credits. If you aren't signed in, it asks you to log in instead of quietly spending money, and it shows a one-time notice whenever it detects and ignores a key.
 - **🛟 Resilient** — if the underlying CLI ever crashes mid-turn, ClaudeView explains what happened in plain language (not a raw stack trace) and **resumes your conversation on the very next message** instead of hanging or losing it.
 - **♻️ Auto-updating** — self-installs to `%LOCALAPPDATA%`, then updates from GitHub Releases (download → **verify SHA-256** → swap on next launch).
 
@@ -65,6 +66,15 @@ the git state, approve plans, and keep an eye on your usage — without the weig
 |  Dark mode  |  Tray usage meter  |
 | :---------: | :----------------: |
 | ![ClaudeView — dark](docs/screenshot-dark.png) | ![ClaudeView tray popup](docs/tray.png) |
+
+</div>
+
+<div align="center">
+
+**🛰️ Drive every session from your phone** — type **`/remote`** to list the sessions running on that
+computer, then **connect** (bridge) or **disconnect** any of them from anywhere.
+
+<img src="docs/remote-control.jpg" width="360" alt="ClaudeView Remote Control — bridging another session from a phone"/>
 
 </div>
 
@@ -88,7 +98,8 @@ the git state, approve plans, and keep an eye on your usage — without the weig
 **Requirements:** Windows 10/11. ClaudeView installs [Node](https://nodejs.org) and the
 [Claude Code CLI](https://docs.claude.com/en/docs/claude-code) (`claude`) on first run if they aren't
 already present — you just need to be **signed in to Claude** (the app can drive the CLI's sign-in for
-you). The WebView2 runtime ships with modern Windows/Edge.
+you). ClaudeView always uses that **subscription** — never a pay-per-token API account, even if you
+have an `ANTHROPIC_API_KEY` set on your machine. The WebView2 runtime ships with modern Windows/Edge.
 
 ## How it works
 
