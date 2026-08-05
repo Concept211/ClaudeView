@@ -89,21 +89,29 @@ computer, then **connect** (bridge) or **disconnect** any of them from anywhere.
 2. Run it. On first launch it copies itself to `%LOCALAPPDATA%\ClaudeView`, extracts its bundled
    sidecar, adds Desktop + Start-Menu shortcuts, and relaunches from there. After that it
    auto-updates itself.
-3. **First-run setup checks your prerequisites and installs what's missing for you** — no manual
-   `npm install` required. When it's done, click **Start using ClaudeView**.
+3. **First-run setup checks your prerequisites and installs what's missing for you** — **Node.js, the
+   Claude Code CLI *and* Git for Windows** — with no manual `npm install`, no admin rights and no UAC
+   prompt: each one lands under your own profile. Git matters more than it looks: on Windows the CLI's
+   Bash tool *is* Git Bash, so a machine without it has nothing for Claude to run shell commands in.
+   It's a few hundred megabytes on a fresh machine, so the window **shows its work** — a spinner per
+   step, a bar that's a real percentage while downloading and a moving sweep while extracting, the step
+   it's on, and a running clock — instead of sitting still long enough to look crashed. When it's done,
+   click **Start using ClaudeView**.
 
 <div align="center">
 
-|  Auto-installs prerequisites  |  Ready to go  |
+|  Auto-installs prerequisites, showing its work  |  Ready to go  |
 | :---------------------------: | :-----------: |
 | ![ClaudeView first-run setup](docs/setup-install.png) | ![ClaudeView setup complete](docs/setup-done.png) |
 
 </div>
 
-**Requirements:** Windows 10/11. ClaudeView installs [Node](https://nodejs.org) and the
-[Claude Code CLI](https://docs.claude.com/en/docs/claude-code) (`claude`) on first run if they aren't
-already present — you just need to be **signed in to Claude** (the app can drive the CLI's sign-in for
-you). ClaudeView always uses that **subscription** — never a pay-per-token API account, even if you
+**Requirements:** Windows 10/11. ClaudeView installs [Node](https://nodejs.org), the
+[Claude Code CLI](https://docs.claude.com/en/docs/claude-code) (`claude`) and
+[Git for Windows](https://gitforwindows.org) on first run if they aren't already present — you just
+need to be **signed in to Claude** (the app can drive the CLI's sign-in for you). A Git you already
+have always wins; the bundled one is a self-contained copy in ClaudeView's own folder that goes away
+when you delete it. ClaudeView always uses that **subscription** — never a pay-per-token API account, even if you
 have an `ANTHROPIC_API_KEY` set on your machine. The WebView2 runtime ships with modern Windows/Edge.
 
 ## How it works
