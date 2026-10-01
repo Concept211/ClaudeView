@@ -102,6 +102,8 @@ computer, then **connect** (bridge) or **disconnect** any of them from anywhere.
    Claude Code CLI *and* Git for Windows** — with no manual `npm install`, no admin rights and no UAC
    prompt: each one lands under your own profile. Git matters more than it looks: on Windows the CLI's
    Bash tool *is* Git Bash, so a machine without it has nothing for Claude to run shell commands in.
+   An old `npm install -g` copy of Claude Code doesn't count as installed: ClaudeView sets up the native
+   CLI alongside it, so a machine with leftovers from an earlier setup works on the first message.
    It's a few hundred megabytes on a fresh machine, so the window **shows its work** — a spinner per
    step, a bar that's a real percentage while downloading and a moving sweep while extracting, the step
    it's on, and a running clock — instead of sitting still long enough to look crashed. When it's done,
