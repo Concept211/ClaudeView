@@ -104,6 +104,9 @@ computer, then **connect** (bridge) or **disconnect** any of them from anywhere.
    Bash tool *is* Git Bash, so a machine without it has nothing for Claude to run shell commands in.
    An old `npm install -g` copy of Claude Code doesn't count as installed: ClaudeView sets up the native
    CLI alongside it, so a machine with leftovers from an earlier setup works on the first message.
+   **Older Windows works too:** the current Claude Code needs Windows 10 1809 or Server 2019, so on anything
+   older (Windows Server 2016, for one) setup installs Claude Code 2.1.112, the last version that runs there,
+   on ClaudeView's own Node. If a step does fail, the setup log is selectable, so the error is easy to copy.
    It's a few hundred megabytes on a fresh machine, so the window **shows its work** — a spinner per
    step, a bar that's a real percentage while downloading and a moving sweep while extracting, the step
    it's on, and a running clock — instead of sitting still long enough to look crashed. When it's done,
@@ -117,7 +120,7 @@ computer, then **connect** (bridge) or **disconnect** any of them from anywhere.
 
 </div>
 
-**Requirements:** Windows 10/11. ClaudeView installs [Node](https://nodejs.org), the
+**Requirements:** Windows 10/11 or Windows Server 2016 and later. ClaudeView installs [Node](https://nodejs.org), the
 [Claude Code CLI](https://docs.claude.com/en/docs/claude-code) (`claude`) and
 [Git for Windows](https://gitforwindows.org) on first run if they aren't already present — you just
 need to be **signed in to Claude** (the app can drive the CLI's sign-in for you). A Git you already
