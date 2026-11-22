@@ -119,6 +119,9 @@ computer, then **connect** (bridge) or **disconnect** any of them from anywhere.
    step, a bar that's a real percentage while downloading and a moving sweep while extracting, the step
    it's on, and a running clock — instead of sitting still long enough to look crashed. When it's done,
    click **Start using ClaudeView**.
+4. **If this PC isn't signed in to Claude yet, that's the next thing it asks for.** The open session says
+   "Sign in to your Claude account to get started" and Claude Code's own sign-in opens in your browser.
+   Once you're in, the button turns into **Signed in** and you can start typing.
 
 <div align="center">
 
@@ -131,7 +134,7 @@ computer, then **connect** (bridge) or **disconnect** any of them from anywhere.
 **Requirements:** Windows 10/11 or Windows Server 2016 and later. ClaudeView installs [Node](https://nodejs.org), the
 [Claude Code CLI](https://docs.claude.com/en/docs/claude-code) (`claude`) and
 [Git for Windows](https://gitforwindows.org) on first run if they aren't already present — you just
-need to be **signed in to Claude** (the app can drive the CLI's sign-in for you). A Git you already
+need to be **signed in to Claude** (the app asks on first launch and drives the CLI's sign-in for you). If Documents can't take its `ClaudeView` folder (redirected by OneDrive, or blocked by Controlled folder access), the built-in Assistant uses a folder under `%LOCALAPPDATA%` instead, and when Claude Code can't start, the error names the real cause: a missing folder, or Windows blocking `claude.exe`. A Git you already
 have always wins; the bundled one is a self-contained copy in ClaudeView's own folder that goes away
 when you delete it. ClaudeView always uses that **subscription** — never a pay-per-token API account, even if you
 have an `ANTHROPIC_API_KEY` set on your machine. The WebView2 runtime ships with modern Windows/Edge.
